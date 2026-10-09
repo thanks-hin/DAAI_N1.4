@@ -4,12 +4,12 @@ CREATE DATABASE SalesLogisticsDW
 ON PRIMARY 
 (
     NAME = N'SalesLogisticsDW_Data',
-    FILENAME = N'D:C:\Users\Student\Downloads\DAAI_N1.4\warehouse_3nf\db\SalesLogisticsDW.mdf'
+    FILENAME = N'D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf\db\SalesLogisticsDW.mdf'
 )
 LOG ON
 (
 	NAME = N'SalesLogisticsDW_Log',
-    FILENAME = N'D:C:\Users\Student\Downloads\DAAI_N1.4\warehouse_3nf\db\SalesLogisticsDW.ldf'
+    FILENAME = N'D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf\db\SalesLogisticsDW.ldf'
 )
 
 USE SalesLogisticsDW
@@ -258,82 +258,99 @@ CREATE TABLE Fact_Sales (
 USE SalesLogisticsDW;
 GO
 
-DECLARE @CsvDir NVARCHAR(500) = N'C:\Users\Student\Downloads\DAAI_N1.4\warehouse_3nf\';
+DECLARE @CsvDir NVARCHAR(500) = N'D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf\';
 DECLARE @sql NVARCHAR(MAX);
 
 -- 1. geography
 SET @sql = N'BULK INSERT geography FROM ''' + @CsvDir + N'geography.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 2. product
 SET @sql = N'BULK INSERT product FROM ''' + @CsvDir + N'product.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 3. promotion
 SET @sql = N'BULK INSERT promotion FROM ''' + @CsvDir + N'promotion.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 4. sales_employee
 SET @sql = N'BULK INSERT sales_employee FROM ''' + @CsvDir + N'sales_employee.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 5. customer
 SET @sql = N'BULK INSERT customer FROM ''' + @CsvDir + N'customer.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 6. shipper
 SET @sql = N'BULK INSERT shipper FROM ''' + @CsvDir + N'shipper.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 7. [order]
 SET @sql = N'BULK INSERT [order] FROM ''' + @CsvDir + N'order.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 8. order_items
 SET @sql = N'BULK INSERT order_items FROM ''' + @CsvDir + N'order_items.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 9. order_item_promotion
 SET @sql = N'BULK INSERT order_item_promotion FROM ''' + @CsvDir + N'order_item_promotion.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 10. payment
 SET @sql = N'BULK INSERT payment FROM ''' + @CsvDir + N'payment.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 11. shipment
 SET @sql = N'BULK INSERT shipment FROM ''' + @CsvDir + N'shipment.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 12. returns
 SET @sql = N'BULK INSERT returns FROM ''' + @CsvDir + N'returns.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 13. reviews
-SET @sql = N'BULK INSERT reviews FROM ''' + @CsvDir + N'reviews.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
-EXEC(@sql);
+--thêm vào bằng code sql
+--SET @sql = N'BULK INSERT reviews FROM ''' + @CsvDir + N'reviews.csv'' WITH (
+--    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+--    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
+--EXEC(@sql);
+print(N'LƯU Ý: THÊM BẢNG REVIEWS VÀO BẰNG 2 CELL CUỐI TRONG FILE silver_to_3NF(1).ipynb')
 
 -- 14. inventory
 SET @sql = N'BULK INSERT inventory FROM ''' + @CsvDir + N'inventory.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- 15. web_traffic
 SET @sql = N'BULK INSERT web_traffic FROM ''' + @CsvDir + N'web_traffic.csv'' WITH (
-    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', DATAFILETYPE = ''widechar'', TABLOCK);';
+    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'', TABLOCK);';
 EXEC(@sql);
 
 -- Kiểm tra nhanh
@@ -360,7 +377,7 @@ GO
 
 SET XACT_ABORT ON;  -- dừng ngay nếu có lỗi, tránh chạy sót mà không biết
 
-DECLARE @CsvDir NVARCHAR(500) = N'C:\Users\Student\Downloads\DAAI_N1.4\warehouse_3nf\star_schema\';
+DECLARE @CsvDir NVARCHAR(500) = N'D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf\star_schema\';
 DECLARE @sql NVARCHAR(MAX);
 
 -- ============ 5 bảng Dim — nạp trước ============
@@ -403,3 +420,15 @@ UNION ALL SELECT 'Dim_Employee', COUNT(*) FROM Dim_Employee
 UNION ALL SELECT 'Dim_Geography', COUNT(*) FROM Dim_Geography
 UNION ALL SELECT 'Dim_Product', COUNT(*) FROM Dim_Product
 UNION ALL SELECT 'Fact_Sales', COUNT(*) FROM Fact_Sales;
+
+--DELETE FROM reviews;
+--GO
+--DECLARE @CsvDir NVARCHAR(500) = N'D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf\';
+--DECLARE @sql NVARCHAR(MAX);
+--SET @sql = N'BULK INSERT reviews FROM ''' + @CsvDir + N'reviews.csv'' WITH (
+--    FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''0x0a'',
+--    CODEPAGE = ''65001'', DATAFILETYPE = ''char'', FORMAT = ''CSV'', FIELDQUOTE = ''"'',
+--    MAXERRORS = 100000,
+--    ERRORFILE = ''' + @CsvDir + N'reviews_errors'',
+--    TABLOCK);';
+--EXEC(@sql);
