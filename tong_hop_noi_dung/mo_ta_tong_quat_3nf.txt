@@ -1,0 +1,189 @@
+BÁO CÁO TỔNG QUAN DỮ LIỆU - WAREHOUSE 3NF
+========================================================================
+Thư mục dữ liệu: D:\TH_DA&AI\DAAI_N1.4\warehouse_3nf
+Số bảng: 15
+Tổng số dòng: 3,323,316
+Tổng số cột: 104
+Tổng dung lượng CSV: 199,082,916 bytes
+
+CHI TIẾT THEO BẢNG
+========================================================================
+
+BẢNG: customer_3nf (customer_3nf.csv)
+------------------------------------------------------------------------
+Số dòng: 121,930 | Số cột: 6 | Kích thước: 5,974,180 bytes (5.697 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - customer_id: type=integer; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=121,930; dài tối đa=6 ký tự; min=1.0; max=157563.0; trung bình=78736.898663; ví dụ=1 | 2 | 3
+  - zip: type=integer; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=31,491; dài tối đa=5 ký tự; min=1001.0; max=99950.0; trung bình=50990.165595; ví dụ=15201 | 15202 | 15203
+  - signup_date: type=date; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=3,941; dài tối đa=10 ký tự; min=2012-01-17; max=2022-12-31; ví dụ=2021-12-30 | 2013-12-27 | 2018-07-24
+  - gender: type=string; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=3; dài tối đa=10 ký tự; ví dụ=Female | Male | Non-binary
+  - age_group: type=string; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=5; dài tối đa=5 ký tự; ví dụ=35-44 | 45-54 | 18-24
+  - acquisition_channel: type=string; không trống=121,930/121,930; trống=0 (0.00%); phân biệt=6; dài tối đa=14 ký tự; ví dụ=social_media | email_campaign | organic_search
+
+BẢNG: geography (geography.csv)
+------------------------------------------------------------------------
+Số dòng: 39,948 | Số cột: 4 | Kích thước: 1,402,284 bytes (1.337 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - zip: type=integer; không trống=39,948/39,948; trống=0 (0.00%); phân biệt=39,948; dài tối đa=5 ký tự; min=1.0; max=99950.0; trung bình=50895.084735; ví dụ=15201 | 15202 | 15203
+  - city: type=string; không trống=39,948/39,948; trống=0 (0.00%); phân biệt=42; dài tối đa=19 ký tự; ví dụ=Hai Phong | Phu Ly | Viet Tri
+  - region: type=string; không trống=39,948/39,948; trống=0 (0.00%); phân biệt=3; dài tối đa=7 ký tự; ví dụ=East | Central | West
+  - district: type=string; không trống=39,948/39,948; trống=0 (0.00%); phân biệt=39; dài tối đa=12 ký tự; ví dụ=District #13 | District #04 | District #06
+
+BẢNG: inventory (inventory.csv)
+------------------------------------------------------------------------
+Số dòng: 60,247 | Số cột: 12 | Kích thước: 3,084,771 bytes (2.942 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - snapshot_date: type=date; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=126; dài tối đa=10 ký tự; min=2012-07-31; max=2022-12-31; ví dụ=2022-10-31 | 2022-11-30 | 2022-12-31
+  - product_id: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=1,624; dài tối đa=4 ký tự; min=1.0; max=2412.0; trung bình=1311.408468; ví dụ=1 | 3 | 4
+  - stock_on_hand: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=1,895; dài tối đa=4 ký tự; min=3.0; max=2673.0; trung bình=189.298455; ví dụ=3 | 35 | 36
+  - units_received: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=360; dài tối đa=3 ký tự; min=1.0; max=817.0; trung bình=18.046807; ví dụ=1 | 13 | 11
+  - units_sold: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=303; dài tối đa=3 ký tự; min=1.0; max=670.0; trung bình=15.417764; ví dụ=1 | 11 | 10
+  - stockout_days: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=29; dài tối đa=2 ký tự; min=0.0; max=28.0; trung bình=1.160639; ví dụ=2 | 1 | 0
+  - days_of_supply: type=float; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=9,289; dài tối đa=7 ký tự; min=5.2; max=68100.0; trung bình=912.677576; ví dụ=90.0 | 95.5 | 108.0
+  - fill_rate: type=float; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=29; dài tối đa=6 ký tự; min=0.0667; max=1.0; trung bình=0.961312; ví dụ=0.9333 | 0.9667 | 1.0
+  - stockout_flag: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=2; dài tối đa=1 ký tự; min=0.0; max=1.0; trung bình=0.673411; ví dụ=1 | 0
+  - overstock_flag: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=2; dài tối đa=1 ký tự; min=0.0; max=1.0; trung bình=0.762561; ví dụ=0 | 1
+  - reorder_flag: type=integer; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=1; dài tối đa=1 ký tự; min=0.0; max=0.0; trung bình=0.0; ví dụ=0
+  - sell_through_rate: type=float; không trống=60,247/60,247; trống=0 (0.00%); phân biệt=4,017; dài tối đa=6 ký tự; min=0.0004; max=0.8531; trung bình=0.152275; ví dụ=0.25 | 0.2391 | 0.2174
+
+BẢNG: order_3nf (order_3nf.csv)
+------------------------------------------------------------------------
+Số dòng: 646,945 | Số cột: 9 | Kích thước: 100,749,788 bytes (96.082 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - order_id: type=integer; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=646,945; dài tối đa=6 ký tự; min=1.0; max=834397.0; trung bình=417189.470332; ví dụ=1 | 2 | 3
+  - order_date: type=date; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=3,833; dài tối đa=10 ký tự; min=2012-07-04; max=2022-12-31; ví dụ=2012-07-04 | 2012-07-06 | 2012-07-05
+  - customer_id: type=integer; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=90,246; dài tối đa=6 ký tự; min=1.0; max=157563.0; trung bình=84906.203535; ví dụ=58578 | 58621 | 58811
+  - zip: type=integer; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=29,932; dài tối đa=5 ký tự; min=1001.0; max=99950.0; trung bình=55410.740423; ví dụ=1109 | 1330 | 1473
+  - order_status: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=6; dài tối đa=9 ký tự; ví dụ=delivered | returned | shipped
+  - device_type: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=3; dài tối đa=7 ký tự; ví dụ=desktop | mobile | tablet
+  - order_source: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=6; dài tối đa=14 ký tự; ví dụ=paid_search | direct | referral
+  - sales_employee_id: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=200; dài tối đa=7 ký tự; ví dụ=EMP0103 | EMP0180 | EMP0093
+  - comment: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=18; dài tối đa=98 ký tự; ví dụ=Dịch vụ chăm sóc khách hàng chuyên nghiệp, thái độ thân thiện và lịch sự. | Dịch vụ ổn định, nhân viên luôn sẵn sàng hỗ trợ khi cần. | Khách hàng không có thêm phản hồi về chất lượng hỗ trợ.
+
+BẢNG: order_item_promotion_3nf (order_item_promotion_3nf.csv)
+------------------------------------------------------------------------
+Số dòng: 276,309 | Số cột: 3 | Kích thước: 6,466,383 bytes (6.167 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - order_id: type=integer; không trống=276,309/276,309; trống=0 (0.00%); phân biệt=248,242; dài tối đa=6 ký tự; min=46253.0; max=834335.0; trung bình=433207.069078; ví dụ=46253 | 46254 | 46257
+  - product_id: type=integer; không trống=276,309/276,309; trống=0 (0.00%); phân biệt=1,495; dài tối đa=4 ký tự; min=1.0; max=2412.0; trung bình=1234.896008; ví dụ=2250 | 2251 | 785
+  - promo_id: type=string; không trống=276,309/276,309; trống=0 (0.00%); phân biệt=50; dài tối đa=10 ký tự; ví dụ=PROMO-0006 | PROMO-0001 | PROMO-0002
+
+BẢNG: order_items_3nf (order_items_3nf.csv)
+------------------------------------------------------------------------
+Số dòng: 714,653 | Số cột: 5 | Kích thước: 19,750,326 bytes (18.835 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - order_id: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=646,945; dài tối đa=6 ký tự; min=1.0; max=834397.0; trung bình=411614.758427; ví dụ=1 | 2 | 3
+  - product_id: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=1,598; dài tối đa=4 ký tự; min=1.0; max=2412.0; trung bình=1234.926946; ví dụ=2400 | 609 | 396
+  - quantity: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=14; dài tối đa=2 ký tự; min=1.0; max=15.0; trung bình=4.496088; ví dụ=7 | 3 | 5
+  - unit_price: type=float; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=492,775; dài tối đa=8 ký tự; min=392.57; max=15324.06; trung bình=5081.51239; ví dụ=1138.22 | 10166.25 | 11220.33
+  - discount_amount: type=float; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=107,010; dài tối đa=7 ký tự; min=0.0; max=4838.15; trung bình=584.673771; ví dụ=0.0 | 1127.74 | 1312.2
+
+BẢNG: payment (payment.csv)
+------------------------------------------------------------------------
+Số dòng: 646,945 | Số cột: 4 | Kích thước: 18,383,291 bytes (17.532 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - order_id: type=integer; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=646,945; dài tối đa=6 ký tự; min=1.0; max=834397.0; trung bình=417189.470332; ví dụ=1 | 2 | 3
+  - payment_method: type=string; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=5; dài tối đa=13 ký tự; ví dụ=credit_card | cod | paypal
+  - payment_value: type=float; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=595,420; dài tối đa=9 ký tự; min=389.74; max=331570.4; trung bình=24238.334426; ví dụ=7967.54 | 71163.75 | 33660.99
+  - installments: type=integer; không trống=646,945/646,945; trống=0 (0.00%); phân biệt=5; dài tối đa=2 ký tự; min=1.0; max=12.0; trung bình=3.448319; ví dụ=3 | 1 | 12
+
+BẢNG: product (product.csv)
+------------------------------------------------------------------------
+Số dòng: 2,412 | Số cột: 8 | Kích thước: 195,172 bytes (0.186 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - product_id: type=integer; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=2,412; dài tối đa=4 ký tự; min=1.0; max=2412.0; trung bình=1206.5; ví dụ=1 | 2 | 3
+  - product_name: type=string; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=2,172; dài tối đa=17 ký tự; ví dụ=DragonWear MA-01 | DragonWear MA-02 | DragonWear MA-03
+  - category: type=string; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=4; dài tối đa=10 ký tự; ví dụ=Casual | Outdoor | Streetwear
+  - segment: type=string; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=8; dài tối đa=11 ký tự; ví dụ=All-weather | Activewear | Premium
+  - size: type=string; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=4; dài tối đa=2 ký tự; ví dụ=M | L | XL
+  - color: type=string; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=10; dài tối đa=6 ký tự; ví dụ=black | orange | blue
+  - price: type=float; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=1,990; dài tối đa=18 ký tự; min=9.056593572436444; max=40950.0; trung bình=4928.216231; ví dụ=4945.5 | 39.062877119540296 | 10831.3771884655
+  - cogs: type=float; không trống=2,412/2,412; trống=0 (0.00%); phân biệt=2,381; dài tối đa=18 ký tự; min=5.183828982020106; max=38902.5; trung bình=3868.346732; ví dụ=2732.8833 | 22.660232699057364 | 10289.808329042224
+
+BẢNG: promotion (promotion.csv)
+------------------------------------------------------------------------
+Số dòng: 50 | Số cột: 10 | Kích thước: 5,009 bytes (0.005 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - promo_id: type=string; không trống=50/50; trống=0 (0.00%); phân biệt=50; dài tối đa=10 ký tự; ví dụ=PROMO-0001 | PROMO-0002 | PROMO-0003
+  - promo_name: type=string; không trống=50/50; trống=0 (0.00%); phân biệt=50; dài tối đa=18 ký tự; ví dụ=Spring Sale 2013 | Mid-Year Sale 2013 | Fall Launch 2013
+  - promo_type: type=string; không trống=50/50; trống=0 (0.00%); phân biệt=2; dài tối đa=10 ký tự; ví dụ=percentage | fixed
+  - discount_value: type=float; không trống=50/50; trống=0 (0.00%); phân biệt=6; dài tối đa=4 ký tự; min=10.0; max=50.0; trung bình=18.5; ví dụ=12.0 | 18.0 | 10.0
+  - start_date: type=date; không trống=50/50; trống=0 (0.00%); phân biệt=50; dài tối đa=10 ký tự; min=2013-01-31; max=2022-11-18; ví dụ=2013-03-18 | 2013-06-23 | 2013-08-30
+  - end_date: type=date; không trống=50/50; trống=0 (0.00%); phân biệt=50; dài tối đa=10 ký tự; min=2013-03-01; max=2022-12-31; ví dụ=2013-04-17 | 2013-07-22 | 2013-10-02
+  - applicable_category: type=string; không trống=50/50; trống=0 (0.00%); phân biệt=3; dài tối đa=14 ký tự; ví dụ=all categories | Streetwear | Outdoor
+  - promo_channel: type=string; không trống=50/50; trống=0 (0.00%); phân biệt=5; dài tối đa=12 ký tự; ví dụ=email | online | all_channels
+  - stackable_flag: type=integer; không trống=50/50; trống=0 (0.00%); phân biệt=2; dài tối đa=1 ký tự; min=0.0; max=1.0; trung bình=0.24; ví dụ=1 | 0
+  - min_order_value: type=integer; không trống=50/50; trống=0 (0.00%); phân biệt=5; dài tối đa=6 ký tự; min=0.0; max=200000.0; trung bình=46000.0; ví dụ=0 | 50000 | 150000
+
+BẢNG: returns (returns.csv)
+------------------------------------------------------------------------
+Số dòng: 35,733 | Số cột: 7 | Kích thước: 2,056,145 bytes (1.961 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - return_id: type=string; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=35,733; dài tối đa=10 ký tự; ví dụ=RET-000001 | RET-000002 | RET-000003
+  - order_id: type=integer; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=35,733; dài tối đa=6 ký tự; min=1.0; max=834347.0; trung bình=411607.805894; ví dụ=1 | 24 | 47
+  - product_id: type=integer; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=1,245; dài tối đa=4 ký tự; min=3.0; max=2412.0; trung bình=1235.841463; ví dụ=2400 | 671 | 1449
+  - return_date: type=date; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=34; dài tối đa=10 ký tự; min=2012-07-11; max=2012-08-13; ví dụ=2012-07-11 | 2012-07-12 | 2012-07-13
+  - return_reason: type=string; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=5; dài tối đa=16 ký tự; ví dụ=wrong_size | defective | changed_mind
+  - return_quantity: type=integer; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=8; dài tối đa=1 ký tự; min=1.0; max=8.0; trung bình=2.381552; ví dụ=1 | 3 | 4
+  - refund_amount: type=float; không trống=35,733/35,733; trống=0 (0.00%); phân biệt=34,932; dài tối đa=9 ký tự; min=531.61; max=122592.48; trung bình=12169.372375; ví dụ=1138.22 | 32590.56 | 7038.36
+
+BẢNG: reviews (reviews.csv)
+------------------------------------------------------------------------
+Số dòng: 714,653 | Số cột: 6 | Kích thước: 38,234,343 bytes (36.463 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - review_id: type=string; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=714,653; dài tối đa=11 ký tự; ví dụ=REV-0000001 | REV-0000002 | REV-0000003
+  - order_id: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=646,945; dài tối đa=6 ký tự; min=1.0; max=834397.0; trung bình=411614.758427; ví dụ=1 | 2 | 3
+  - product_id: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=1,598; dài tối đa=4 ký tự; min=1.0; max=2412.0; trung bình=1234.926946; ví dụ=2400 | 609 | 396
+  - review_date: type=date; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=42; dài tối đa=10 ký tự; min=2012-07-10; max=2012-08-20; ví dụ=2012-07-10 | 2012-07-11 | 2012-07-12
+  - rating: type=integer; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=5; dài tối đa=1 ký tự; min=1.0; max=5.0; trung bình=4.190056; ví dụ=5 | 4 | 3
+  - review_title: type=string; không trống=714,653/714,653; trống=0 (0.00%); phân biệt=16; dài tối đa=23 ký tự; ví dụ=Highly recommend | Very satisfied | Excellent product!
+
+BẢNG: sales_employee (sales_employee.csv)
+------------------------------------------------------------------------
+Số dòng: 200 | Số cột: 2 | Kích thước: 5,186 bytes (0.005 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - sales_employee_id: type=string; không trống=200/200; trống=0 (0.00%); phân biệt=200; dài tối đa=7 ký tự; ví dụ=EMP0103 | EMP0180 | EMP0093
+  - name: type=string; không trống=200/200; trống=0 (0.00%); phân biệt=192; dài tối đa=16 ký tự; ví dụ=Nguyễn Thị Phúc | Lê Gia Hùng | Bùi Minh Quân
+
+BẢNG: shipment (shipment.csv)
+------------------------------------------------------------------------
+Số dòng: 59,559 | Số cột: 5 | Kích thước: 2,557,431 bytes (2.439 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - order_id: type=integer; không trống=59,559/59,559; trống=0 (0.00%); phân biệt=59,559; dài tối đa=5 ký tự; min=1.0; max=87576.0; trung bình=43857.262429; ví dụ=1 | 2 | 3
+  - shipper_id: type=string; không trống=59,559/59,559; trống=0 (0.00%); phân biệt=80; dài tối đa=8 ký tự; ví dụ=SHP00001 | SHP00002 | SHP00003
+  - ship_date: type=date; không trống=59,559/59,559; trống=0 (0.00%); phân biệt=351; dài tối đa=10 ký tự; min=2012-07-04; max=2013-06-19; ví dụ=2012-07-07 | 2012-07-06 | 2012-07-04
+  - delivery_date: type=date; không trống=59,559/59,559; trống=0 (0.00%); phân biệt=355; dài tối đa=10 ký tự; min=2012-07-06; max=2013-06-25; ví dụ=2012-07-11 | 2012-07-10 | 2012-07-07
+  - shipping_fee: type=float; không trống=59,559/59,559; trống=0 (0.00%); phân biệt=1,422; dài tối đa=5 ký tự; min=0.0; max=32.0; trung bình=5.740157; ví dụ=1.37 | 2.6 | 2.38
+
+BẢNG: shipper (shipper.csv)
+------------------------------------------------------------------------
+Số dòng: 80 | Số cột: 16 | Kích thước: 9,882 bytes (0.009 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - shipper_id: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=80; dài tối đa=8 ký tự; ví dụ=SHP00001 | SHP00002 | SHP00003
+  - shipper_name: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=73; dài tối đa=18 ký tự; ví dụ=Bùi Văn Long | Trần Anh Khánh | Hoàng Thị Khánh
+  - shipper_phone: type=integer; không trống=80/80; trống=0 (0.00%); phân biệt=80; dài tối đa=9 ký tự; min=900482857.0; max=999125359.0; trung bình=950716597.1125; ví dụ=991476209 | 959297982 | 927142576
+  - shipper_gender: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=2; dài tối đa=6 ký tự; ví dụ=Male | Female
+  - shipper_age: type=integer; không trống=80/80; trống=0 (0.00%); phân biệt=27; dài tối đa=2 ký tự; min=24.0; max=55.0; trung bình=41.7125; ví dụ=27 | 41 | 30
+  - shipper_marital_status: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=2; dài tối đa=7 ký tự; ví dụ=Married | Single
+  - shipper_education: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=3; dài tối đa=11 ký tự; ví dụ=Bachelor | High School | College
+  - shipper_company: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=8; dài tối đa=14 ký tự; ví dụ=Viettel Post | J&T Express | GHN
+  - shipper_vehicle: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=3; dài tối đa=9 ký tự; ví dụ=Truck | Van | Motorbike
+  - shipper_experience_years: type=integer; không trống=80/80; trống=0 (0.00%); phân biệt=12; dài tối đa=2 ký tự; min=1.0; max=12.0; trung bình=7.625; ví dụ=7 | 2 | 10
+  - shipper_rating: type=float; không trống=80/80; trống=0 (0.00%); phân biệt=9; dài tối đa=3 ký tự; min=4.2; max=5.0; trung bình=4.645; ví dụ=5.0 | 4.9 | 4.8
+  - delivery_success_rate: type=float; không trống=80/80; trống=0 (0.00%); phân biệt=42; dài tối đa=4 ký tự; min=95.1; max=99.9; trung bình=97.51125; ví dụ=99.0 | 98.4 | 95.1
+  - average_delivery_time: type=integer; không trống=80/80; trống=0 (0.00%); phân biệt=42; dài tối đa=2 ký tự; min=20.0; max=75.0; trung bình=47.6625; ví dụ=61 | 72 | 53
+  - working_shift: type=string; không trống=80/80; trống=0 (0.00%); phân biệt=3; dài tối đa=9 ký tự; ví dụ=Evening | Afternoon | Morning
+  - join_date: type=date; không trống=80/80; trống=0 (0.00%); phân biệt=80; dài tối đa=10 ký tự; min=2018-01-12; max=2026-03-17; ví dụ=2026-03-17 | 2025-01-29 | 2019-11-13
+  - zip: type=integer; không trống=80/80; trống=0 (0.00%); phân biệt=76; dài tối đa=5 ký tự; min=3.0; max=90029.0; trung bình=30004.875; ví dụ=38006 | 52231 | 3
+
+BẢNG: web_traffic (web_traffic.csv)
+------------------------------------------------------------------------
+Số dòng: 3,652 | Số cột: 7 | Kích thước: 208,725 bytes (0.199 MB) | Encoding: utf-8-sig
+Mô tả cột:
+  - date: type=date; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=3,652; dài tối đa=10 ký tự; min=2013-01-01; max=2022-12-31; ví dụ=2013-01-01 | 2013-01-02 | 2013-01-03
+  - sessions: type=integer; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=3,447; dài tối đa=5 ký tự; min=7973.0; max=50947.0; trung bình=25041.768072; ví dụ=9760 | 10456 | 10076
+  - unique_visitors: type=integer; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=3,382; dài tối đa=5 ký tự; min=6136.0; max=40430.0; trung bình=19031.404436; ví dụ=7253 | 8151 | 7458
+  - page_views: type=integer; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=3,620; dài tối đa=6 ký tự; min=30451.0; max=275560.0; trung bình=108615.224535; ví dụ=39093 | 47611 | 36963
+  - bounce_rate: type=float; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=261; dài tối đa=7 ký tự; min=0.0032; max=0.0058; trung bình=0.004487; ví dụ=0.00514 | 0.00406 | 0.00401
+  - avg_session_duration_sec: type=float; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=1,771; dài tối đa=5 ký tự; min=100.1; max=319.9; trung bình=210.283242; ví dụ=102.9 | 120.5 | 263.6
+  - traffic_source: type=string; không trống=3,652/3,652; trống=0 (0.00%); phân biệt=6; dài tối đa=14 ký tự; ví dụ=organic_search | direct | referral

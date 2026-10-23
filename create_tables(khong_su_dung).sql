@@ -432,3 +432,61 @@ UNION ALL SELECT 'Fact_Sales', COUNT(*) FROM Fact_Sales;
 --    ERRORFILE = ''' + @CsvDir + N'reviews_errors'',
 --    TABLOCK);';
 --EXEC(@sql);
+
+USE SalesLogisticsDW;
+GO
+
+SET XACT_ABORT ON;  -- Dừng ngay nếu có lỗi xảy ra
+
+-- BƯỚC 1: Đảm bảo 3 cột mới đã tồn tại trong bảng chính
+IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('Dim_Employee') AND name = 'years_experience')
+    ALTER TABLE Dim_Employee ADD years_experience INT;
+
+IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('Dim_Employee') AND name = 'education_level')
+    ALTER TABLE Dim_Employee ADD education_level NVARCHAR(100);
+
+IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('Dim_Employee') AND name = 'marital_status')
+    ALTER TABLE Dim_Employee ADD marital_status NVARCHAR(50);
+GO
+
+-- BƯỚC 2: Tạo bảng tạm (Staging) khớp với cấu trúc file CSV
+IF OBJECT_ID('tempdb..#Staging_Dim_Employee') IS NOT NULL
+    DROP TABLE #Staging_Dim_Employee;
+
+CREATE TABLE #Staging_Dim_Employee (
+    sales_employee_id VARCHAR(50),
+    name NVARCHAR(255),
+    years_experience INT,
+    education_level NVARCHAR(100),
+    marital_status NVARCHAR(50)
+);
+
+-- BƯỚC 3: Nạp dữ liệu từ file CSV vào bảng tạm (Sử dụng CODEPAGE = '65001' cho UTF-8)
+DECLARE @CsvDir NVARCHAR(500) = N'D:\TH_DA&AI\DAAI_N1.4\golden_data\';
+DECLARE @sql NVARCHAR(MAX);
+
+SET @sql = N'BULK INSERT #Staging_Dim_Employee 
+FROM ''' + @CsvDir + N'Dim_Employee.csv'' 
+WITH (
+    FIRSTROW = 2, 
+    FIELDTERMINATOR = '','', 
+    ROWTERMINATOR = ''\n'', 
+    CODEPAGE = ''65001'', 
+    TABLOCK);';
+EXEC(@sql);
+
+-- (Tùy chọn) Bạn có thể chạy dòng dưới đây trước khi UPDATE để kiểm tra xem bảng tạm đã nhận được dữ liệu chưa:
+-- SELECT * FROM #Staging_Dim_Employee;
+
+-- BƯỚC 4: Cập nhật dữ liệu vào các cột mới (KHÔNG THÊM DÒNG MỚI)
+UPDATE d
+SET d.years_experience = s.years_experience,
+    d.education_level = s.education_level,
+    d.marital_status = s.marital_status
+FROM Dim_Employee d
+INNER JOIN #Staging_Dim_Employee s ON LTRIM(RTRIM(d.sales_employee_id)) = LTRIM(RTRIM(s.sales_employee_id));
+
+-- Xóa bảng tạm sau khi hoàn tất
+DROP TABLE #Staging_Dim_Employee;
+
+select * from Dim_Employee

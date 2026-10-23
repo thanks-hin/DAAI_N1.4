@@ -1,0 +1,16 @@
+so sánh file trong thư mục warehouse vs silver_data
+customer: 0
+geography: 0
+inventory: 1 (warehouse ít cột hơn)
+order_item_promotion: 0
+order_items: 0
+order: 0
+payment: 0
+product: 0
+promotion: 0
+returns: 0
+reviews: 0
+sales_employee: 1 (warehouse ít cột hơn - chỉ tên và id)
+shipment: 0
+shipper: 0
+web_traffic: 1 (silver_data thêm cột is_outlier)
